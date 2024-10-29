@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Still spørsmål:</label>
+    <input type="text" id="textInput" style="width: 250px;" placeholder="F.eks: «Skal jeg ta oppvasken i dag?»"></input>
+    <button id="ask8Ball" onclick="getRandomAnswer()">Ask 8-ball!!</button>
+    <ul id="answerList"></ul>
+
+    <script>
+    let answers = ["Ja",
+        "Nei",
+        "Du har to minutter på deg!",
+        "Gjør det heller i morgen",
+        "Utsett det lengst mulig",
+        "Be heller naboen om å gjøre det",
+        "Utfør det nå ellers får du politiet på nakken"];
+
+        function getRandomAnswer() {
+            let randomIndex = Math.floor(Math.random() * answers.length); // Her henter den ut et random svar fra Arrayet.
+            let answer = answers[randomIndex]; // ...og legger det her midlertidig.
+            let list = document.getElementById('answerList'); // Og så henter 8-ball et svar fra answers-lista.
+            list.innerHTML += `<li>${answer}</li>`; // Og til slutt, her er svaret fra 8-ball som legges til i nettleser.
+        }
+
+    </script>
+
+</body>
+</html>
